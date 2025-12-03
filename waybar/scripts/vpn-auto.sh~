@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Get current public IP
+CURRENT_IP=$(curl -s https://api.ipify.org)
+LAST_IP_FILE="$HOME/.config/waybar/scripts/.last_public_ip"
+
+if [[ -f "$LAST_IP_FILE" ]]; then
+    LAST_IP=$(cat "$LAST_IP_FILE")
+else
+    LAST_IP="$CURRENT_IP"
+    echo "$CURRENT_IP" > "$LAST_IP_FILE"
+fi
+
+if [[ "$CURRENT_IP" != "$LAST_IP" ]]; then
+    STATUS="connected"
+else
+    STATUS="disconnected"
+fi
+
+echo "$CURRENT_IP" > "$LAST_IP_FILE"
+
+# Output with color directly
+if [[ "$STATUS" == "connected" ]]; then
+    echo "{\"text\": \"<span color='#00ff00'></span>\", \"markup\": true}"
+else
+    echo "{\"text\": \"<span color='#888888'></span>\", \"markup\": true}"
+fi

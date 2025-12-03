@@ -1,0 +1,92 @@
+* {
+color: @main-fg;
+font-family: "Commit Mono Nerd Font";
+font-weight: bold;
+font-size: 14px;
+}
+
+#custom-exit {
+font-size: 20px;
+font-weight:bold;
+}
+
+
+tooltip{
+    border: 2px solid @main-br;
+    border-radius: 10px;
+    background-color: @main-bg;
+}
+tooltip > box {
+    padding: 0 6px;
+}
+
+
+/*#waybar {
+background-color: @outline;
+}*/
+
+#waybar > box {
+margin: 1px;
+background-color: @main-bg;
+}
+
+#custom-left_div.1,
+#custom-right_div.1 {
+color: @workspaces;
+}
+
+
+/* tool tip */
+tooltip {
+
+}
+
+
+
+
+
+/*  modules  */
+#workspaces {
+padding: 0 1px;
+background-color: @workspaces;
+}
+
+#window {
+margin-left: 12px;
+}
+
+#cpu {
+background-color: @cpu;
+}
+
+#battery {
+background-color: @battery;
+}
+
+#backlight {
+background-color: @backlight;
+}
+
+
+
+
+/*  states */
+/*  color definitions for all modules in warning state (default yellow already in waybar) */
+#memory.warning,
+#cpu.warning,
+#battery.warning {
+color: @warning;
+}
+
+/*  color definitions for all modules in critical state (no default for critical state in waybar) */
+#temperature. critical,
+#memory. critical,
+#cpu. critical,
+#battery. critical {
+color: @critical;
+}
+
+#battery.charging {
+color: @charging;
+}
+
