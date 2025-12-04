@@ -103,6 +103,10 @@ background-color: transparent;
 color: #00aaff;
 background-color: transparent;
 }
+#battery.full{
+color: #00aaff;
+background-color: transparent;
+}
 
 #custom-cpu.cpu-low {
     color: #ffffff;  /* green */

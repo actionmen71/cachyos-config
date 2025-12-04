@@ -119,6 +119,7 @@
     "format-time": "{H} hr {M} min",
     "format-charging": "󰉁 {capacity}%",
     "format-plugged": "  {capacity}%",
+    "format-full": "  {capacity}%",
     "format-alt": "{icon}  {time}",
  
     "format-icons": [" ", " ", " ", " ", " "],
