@@ -415,7 +415,7 @@ window-rule {
 // Make fuzzel semitransparent.
 layer-rule {
     match namespace="^launcher$"
-    opacity 0.8
+    opacity 1.0
  
 }
 
