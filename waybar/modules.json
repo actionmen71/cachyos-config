@@ -1,18 +1,19 @@
 {
-  // Workspaces
   "niri/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-          "active": "",
-          "default": ""
-      },
+        "1": "",
+		    "2": "",
+		    "3": "",
+		    "4": "",
+		    "5": "",
+		    "6": "",
+		    "active": "",
+		    "default": "" 
+      }
   },
 
-
-
-
-  // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 20,
@@ -29,9 +30,6 @@
     }
   },
 
-
-
-  // niri Window
   "niri/window": {
     "format": "{app_id}",
     "rewrite": {
@@ -46,106 +44,45 @@
   },
 
 
+    
 
-"niri/windowcount": {
-    "format": "[{}]",
-    "format-empty": "[0]",
-    "format-windowed": "[{}]",
-    "format-fullscreen": "[F]",
-    "swap-icon-label": false,
-    "min-length": 3,
-    "max-length": 5,
-    "separate-outputs": true
-},
-
-
-
-
-  // Empty
-  "custom/empty": {
-    "format": ""
-  },
-
-
-
-    // Tools
-  "custom/tools": {
-    "format": "",
-    "tooltip-format": "Tools"
-  },
-
-
-
-
-  // Updates Count
+  
   "custom/updates": {
-      "format": "{} {icon}",
+      "format": "{}",
       "return-type": "json",
       "interval": 3600,
       "signal": 1,
-      "min-length":5,
-      "max-length":5,
-      "format-icons": {
-          "has-updates": "󱍷",
-          "updated": "󰂪"
-      },
-      //"exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
+      "min-length":8,
+      "max-length":8,
       "exec": "~/.config/waybar/scripts/system-update.sh module",
       "on-click": "alacritty -e ~/.config/waybar/scripts/system-update.sh",
       "on-click-right": "pkill -RTMIN+1 waybar"
   },
+   
 
 
-
-
-  // wofi Application Launcher
-  "custom/appmenu": {
-    "format": "   ",
-    "on-click": "sleep 0.2;wofi -show drun -replace",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
-  },
-
-
-
-  // wofi Application Launcher
-  "custom/appmenuicon": {
-    "format": "",
-    "on-click": "sleep 0.2;wofi -show drun -replace",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
-  },
-
-
-
-  // Power Menu
   "custom/exit": {
     "format": " 󰐥 ",
     "on-click": "~/.config/waybar/scripts/power-menu.sh",
     "tooltip":false,
     "min-length": 5,
-    "max-length": 5,
+    "max-length": 5
   },
 
-  // Keyboard State
-//not using Keyboard state causes crash not a viable fix yet
-
-
-  // System tray
   "tray": {
     "icon-size": 16,
     "spacing": 14,
     "show-passive-items":true,
     "cursor":true,
-    "reverse-direction":true
+    "reverse-direction":true,
+    "min-length": 8
 
   },
 
-
-
-  // Clock
    "clock#date":{
       "format": "󰸗 {:%m-%d}",
-      "min-length": 6,
-      "max-length": 6,
+      "min-length": 8,
+      "max-length": 8,
       "tooltip-format": "{calendar}",
       "calendar": {
           "mode": "month",
@@ -153,7 +90,7 @@
           "format": {
               "months": "<span alpha='100%'><b>{}</b></span>",
               "days": "<span alpha='90%'>{}</span>",
-              // "weeks":
+ 
               "weekdays": "<span alpha='80%'><i>{}</i></span>",
               "today": "<span alpha='100%'><b><u>{}</u></b></span>"
           }
@@ -163,7 +100,6 @@
       }
     },
 
-
    "clock#time":{
     "interval":1,
       "format": "{:%H:%M}",
@@ -172,24 +108,11 @@
       "tooltip-format": "{:%I:%M:%S %p}"
     },
 
-
-
-
-
-
-
-  "niri/language": {
-    "format": "/ K {short}"
-  },
-
-
-
-  // Battery
   "battery": {
-    "interval":5,
+    "interval":1,
     "states": {
       // "good": 95,
-      "warning": 20,
+      "warning": 30,
       "critical": 10
     },
     "format": "{icon} {capacity}%",
@@ -197,12 +120,11 @@
     "format-charging": "󰉁 {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{icon}  {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
+ 
     "format-icons": [" ", " ", " ", " ", " "],
-    "min-length": 7,
-    "max-length": 7,
-    //"tooltip": false,
+    "min-length": 8,
+    "max-length": 8,
+   
     "tooltip-format": "<b>Time left</b>: {time}\n<b>health</b>:{health}",
     "tooltip-format-plugged":"<b>Plugged in (Not charging)",
     "tooltip-format-charging":"<b>Power</b>:{power}<b>\nCycles</b>:{cycles}<b>
@@ -214,12 +136,8 @@ Time</b>:{time}\n<b>health</b>:{health}" ,
       }
   },
 
-
-
-
-  // Pulseaudio
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
+ 
     "format": "{icon}  {volume}%",
     "format-muted": "{icon} {volume}%",
     "format-icons": {
@@ -233,13 +151,10 @@ Time</b>:{time}\n<b>health</b>:{health}" ,
 
     "on-click": "pavucontrol",
     "tooltip-format": "<b>Output Device</b>: {desc}",
-    "min-length":9,
-    "max-length":9
+    "min-length":10,
+    "max-length":10
   },
 
-
-
-  // Bluetooth
   "bluetooth": {
     "format": "󰂯",
     "format-disabled": "󰂲",
@@ -257,28 +172,18 @@ Time</b>:{time}\n<b>health</b>:{health}" ,
     "tooltip-format-enumerate-connected": "Device: {device_alias}",
     "tooltip-format-connected-battery": "Device: {device_alias}\nBattery: {device_battery_percentage}%",
     "tooltip-format-enumerate-connected-battery": "Device: {device_alias}\nBattery: {device_battery_percentage}%",
-    "min-length": 4,
-     "max-length": 4,
+    "min-length": 6,
+     "max-length": 6,
   },
-
-
-
-
-  // user
+ 
   "user": {
-      "format": "<b>{user}</b> {work_H}:{work_M}",
+      "format": "<b></b>    {work_H}:{work_M}",
       "interval": 60,
-      "height": 30,
-      "width": 30,
-      "min-length":14,
+      "min-length":12,
       "icon": true,
       "open-on-click":true,
   },
 
-
-
-
-  // backlight:
   "backlight": {
     "format": "{icon}  {percent}%",
     "format-icons": [
@@ -298,50 +203,45 @@ Time</b>:{time}\n<b>health</b>:{health}" ,
       "",
       ""
     ],
-    "min-length": 7,
-    "max-length": 7,
+    "min-length": 8,
+    "max-length": 8,
     "scroll-step": 1,
     "tooltip": false
   },
 
-//cpu
-  "cpu":{
-    "interval": 3,
-    "format": "󰍛 {usage}%",
-    "format-warning": "󰀨 {usage}%",
-    "format-critical": "󰀨 {usage}%",
-    "min-length": 6,
-    "max-length": 6,
-    "states":{
-      "warning":75,
-      "critical":90
-    },
-    "tooltip":false
-  },
 
-
-//memory
+"custom/cpu": {
+   "format": "{}",
+    // "exec": "~/.config/waybar/scripts/cpu-usage.sh module",
+    "exec": "~/.config/waybar/scripts/cpu-usage.sh module",
+    "interval": 5,
+    "min-length": 8,
+    "max-length": 8,
+    "return-type": "json",
+    "tooltip": false,
+    "signal": 1,
+    "on-click-right": "pkill -RTMIN+1 waybar"
+},
+ 
   "memory":{
     "interval":30,
-    "format": "󰘚 {percentage}%",
+    "format": "󰘚  {percentage}%",
     "format-warning": "󰀧 {percentage}%",
     "format-critical": "󰀧 {percentage}%",
     "states":{
       "warning":75,
       "critical":90
       },
-    "min-length":6,
-    "max-length":6,
+    "min-length":8,
+    "max-length":8,
     "tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB"
 
 
   },
-
-
-//network
+ 
   "network":{
     "interval":3,
-    "format-wifi":  "    {bandwidthTotalBytes}",
+    "format-wifi":  "   {bandwidthTotalBits}",
     "format": "󰤨",
     "format-disconnected": "󰤯",
     "format-disabled": "󰤮",
@@ -361,37 +261,31 @@ Time</b>:{time}\n<b>health</b>:{health}" ,
     "tooltip-format-disabled": "Wi-Fi Disabled"
   },
 
-
-
-//temperature
   "temperature":{
     "thermal-zone": 9,
-    "critical-threshold":65 ,
-    "warning-threshold":60,
+    "critical-threshold":90,
+    "warning-threshold":70,
     "interval": 10,
     "format-critical": "󰀦 {temperatureC}°C",
     "format": "{icon} {temperatureC}°C",
     "format-icons": [
           "󱃃", "󰔏", "󱃂"
       ],
-    "min-length":6,
-    "max-length":6,
+    "min-length":8,
+    "max-length":8,
     "tooltip":false
 
 
     },
 
-
-
-//idle inhibitor
   "idle_inhibitor":{
     "format": "{icon}",
     "format-icons": {
         "activated": "󰈈",
         "deactivated": "󰈉"
       },
-    "min-length": 3,
-    "max-length": 3,
+    "min-length": 5,
+    "max-length": 5,
     "tooltip-format-activated": "<b>Idle Inhibitor</b>: <span
 text_transform='capitalize'>{status}</span>",
     "tooltip-format-deactivated": "<b>Idle Inhibitor</b>: <span
@@ -400,24 +294,14 @@ text_transform='capitalize'>{status}</span>",
   },
 
 
- //disk
+ 
   "disk": {
 	"interval": 100,
-	"format": "󰨣 {percentage_used}",
+	"format": "󰨣  {percentage_used}",
 	"tooltip-format": "{specific_free:0.2f} GB / {specific_total:0.2f} GB",
 	"unit": "GB",
-	"min-length": 5,
-    "max-length": 5,
-},
-"custom/vpn": {
-    "exec": "~/.config/waybar/scripts/vpn-auto.sh",
-    "return-type": "json",
-    "interval": 1,
-    "min-length": 5,
-    "max-length": 5,
+	"min-length": 7,
+    "max-length": 7,
 }
-
-
-
 
 }

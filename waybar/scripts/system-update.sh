@@ -88,7 +88,7 @@ display-module() {
         icon="󰄯"  # no updates icon
     else
         text="$total"
-        icon="󰀪"  # updates available icon
+        icon="󰂪"  # updates available icon
     fi
 
 	local tooltip="<b>Official</b>: $repo"
@@ -96,7 +96,7 @@ display-module() {
 		tooltip+="\n<b>AUR($helper)</b>: $aur"
 	fi
 
-	echo "{ \"text\": \"$text $icon\", \"tooltip\": \"$tooltip\" }"
+	echo "{ \"text\": \"$text   $icon\", \"tooltip\": \"$tooltip\" }"
 
 
 }

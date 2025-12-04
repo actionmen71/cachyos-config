@@ -1,45 +1,52 @@
 * {
-color: @main-fg;
-font-family: "Commit Mono Nerd Font";
-font-weight: bold;
-font-size: 14px;
+    border: none;
+    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font,JetBrainsMono NF" ; 
+    /* font-family:Arial, Helvetica, sans-serif; */
+    font-weight: bold;
+    /* min-height: 20px; */
 }
 
-#custom-exit {
-font-size: 20px;
-font-weight:bold;
-}
+
 
 
 tooltip{
-    border: 2px solid @main-br;
-    border-radius: 10px;
-    background-color: @main-bg;
+    border: 2px solid #d599e0;
+    border-radius: 20px;
+   background-color: #1f0f3a; 
 }
-tooltip > box {
-    padding: 0 6px;
+
+tooltip label {
+    font-weight: bold;
+    color: #d599e0;
 }
 
 
-/*#waybar {
-background-color: @outline;
-}*/
+#waybar.main{
+    background: transparent;
+
+}
 
 #waybar > box {
 margin: 1px;
-background-color: @main-bg;
-}
-
-#custom-left_div.1,
-#custom-right_div.1 {
-color: @workspaces;
+/* background-color: #1a211b; */
 }
 
 
-/* tool tip */
-tooltip {
-
+.modules-left, .modules-right, .modules-center{
+    background-color: #1f0f3a; 
+    border-radius: 25px;
+    border: 3px solid #d599e0;
+    
 }
+.modules-left{
+    padding-right: 10px;
+}
+.modules-right{
+    padding-left: 10px;
+    
+}
+
 
 
 
@@ -70,23 +77,61 @@ background-color: @backlight;
 
 
 
-/*  states */
-/*  color definitions for all modules in warning state (default yellow already in waybar) */
-#memory.warning,
-#cpu.warning,
-#battery.warning {
-color: @warning;
+
+
+
+
+
+
+#memory.warning, #battery.warning, #temperature.warning
+{
+color: #fcfc03;
+background-color: transparent;
 }
 
-/*  color definitions for all modules in critical state (no default for critical state in waybar) */
-#temperature. critical,
-#memory. critical,
-#cpu. critical,
-#battery. critical {
-color: @critical;
+#memory.critical, #battery.critical, #temperature.critical{
+color: #ff0000;
+background-color: transparent;
 }
 
 #battery.charging {
-color: @charging;
+color: #00ff1a;
+background-color: transparent;
 }
 
+#battery.plugged {
+color: #00aaff;
+background-color: transparent;
+}
+
+#custom-cpu.cpu-low {
+    color: #ffffff;  /* green */
+}
+
+#custom-cpu.cpu-medium {
+    color: #ffff00;  /* yellow */
+}
+
+#custom-cpu.cpu-high {
+    color: #ff0000;  /* red */
+}
+
+#network.disabled{
+    color: #ff0000;  /* red */
+}
+
+#network.disconnected{
+     color: #ffff00;
+}
+
+#bluetooth.disabled{
+    color: #000000;  /* red */
+}
+
+#bluetooth.off{
+    color: #ff0000;  /* red */
+}
+
+#bluetooth.connected{
+     color: #00aaff;
+}

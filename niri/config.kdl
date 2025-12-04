@@ -86,7 +86,7 @@ output "eDP-1" {
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    transform "normal"
+    // transform "normal"
 
     // Position of the output in the global coordinate space.
     // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
@@ -97,7 +97,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=1280 y=0
+    // position x=1280 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -106,7 +106,7 @@ output "eDP-1" {
 layout {
     // Set gaps around windows in logical pixels.
     gaps 6
-    background-color "#003300"
+    // background-color "#003300"
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -154,7 +154,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 5
+        width 3
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -177,7 +177,8 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        active-gradient from="#00a6ffff" to="#4c00ffff" angle=45 in="oklch longer hue" relative-to="workspace-view"
+        // active-gradient from="#d599e0" to="#b300ffff" angle=45 in="oklch longer hue" relative-to="workspace-view"
+        active-gradient from="#d599e0" to="#b300ffff" 
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -186,31 +187,11 @@ layout {
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
-    // You can also add a border. It's similar to the focus ring, but always visible.
-    border {
-        // The settings are the same as for the focus ring.
-        // If you enable the border, you probably want to disable the focus ring.
-        off
-
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
-
-        // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-
-        // Gradients can use a few different interpolation color spaces.
-        // For example, this is a pastel rainbow gradient via in="oklch longer hue".
-        //
-        // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
-
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-    }
 
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        on
+        // on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -275,15 +256,18 @@ spawn-at-startup "alacritty"
 spawn-at-startup "mako"
 spawn-at-startup "foot" "--server"
 spawn-at-startup "waybar"
-spawn-at-startup "-sh" "/usr/lib/polkit-kde-authentication-agent-1 &"
-spawn-at-startup "-sh" "swww-daemon" 
-spawn-at-startup "-sh" "swww img " "/usr/share/wallpapers/cachyos-wallpapers/GreenNekoLady.png" 
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "swww-daemon" 
+// spawn-sh-at-startup "swww  img  /usr/share/wallpapers/cachyos-wallpapers/Dimensions.png" 
+spawn-sh-at-startup "swww  img  ~/Pictures/obito.jpg" 
+// spawn-at-startup "swww-daemon" 
+// spawn-at-startup "swww img" "/usr/share/wallpapers/cachyos-wallpapers/limine-splash.png" 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -318,60 +302,17 @@ animations {
     window-open {
       duration-ms 200
       curve "ease-out-quad"
-    //   curve "cubic-bezier" 0.05 0.7 0.1 1
-    //   curve "ease-out-cubic"
-    //   curve "ease-out-expo"
+ 
       }
     
-    // window-open {
-    //     duration-ms 250
-    //     curve "linear"
-
-    //     custom-shader r"
-    //         vec4 open_color(vec3 coords_geo, vec3 size_geo) {
-    //             vec4 color = vec4(0.0);
-
-    //             if (0.0 <= coords_geo.x && coords_geo.x <= 1.0
-    //                     && 0.0 <= coords_geo.y && coords_geo.y <= 1.0)
-    //             {
-    //                 vec4 from = vec4(1.0, 0.0, 0.0, 1.0);
-    //                 vec4 to = vec4(0.0, 1.0, 0.0, 1.0);
-    //                 color = mix(from, to, coords_geo.y);
-    //             }
-
-    //             return color * niri_clamped_progress;
-    //         }
-    //     "
-    // }
-
 
 
     window-close {
       duration-ms 200
       curve "ease-out-cubic"
-        //   curve "ease-out-quad"
-    //   curve "cubic-bezier" 0.05 0.7 0.1 1
-    //   curve "ease-out-cubic"
-    //   curve "ease-out-expo"
+ 
       }
 
-    // window-close {
-    //     custom-shader r"
-    //         vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-    //             vec4 color = vec4(0.0);
-
-    //             if (0.0 <= coords_geo.x && coords_geo.x <= 1.0
-    //                     && 0.0 <= coords_geo.y && coords_geo.y <= 1.0)
-    //             {
-    //                 vec4 from = vec4(1.0, 0.0, 0.0, 1.0);
-    //                 vec4 to = vec4(0.0, 1.0, 0.0, 1.0);
-    //                 color = mix(from, to, coords_geo.y);
-    //             }
-
-    //             return color * (1.0 - niri_clamped_progress);
-    //         }
-    //     "
-    // }
 
 
     horizontal-view-movement {
@@ -439,7 +380,7 @@ window-rule{
     open-floating false
     open-maximized true
     match is-floating=true
-    baba-is-float true
+  
 }
 window-rule{
     match app-id="code-oss" 
@@ -451,17 +392,6 @@ window-rule{
 }
 
 
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
-}
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
@@ -470,48 +400,25 @@ window-rule {
     clip-to-geometry true
 }
 
-window-rule {
-  match app-id="alacritty"
-  open-maximized true
-}
+// window-rule {
+//   match app-id="alacritty"
+//   open-maximized true
+// }
 
 
 // Show layer-shell surfaces with 0.5 opacity at niri startup, but not afterwards.
-layer-rule {
-    match at-startup=true
-    opacity 0.5
-}
+// layer-rule {
+//     match at-startup=true
+//     opacity 0.5
+// }
+
 // Make fuzzel semitransparent.
 layer-rule {
     match namespace="^launcher$"
     opacity 0.8
-    baba-is-float true
+ 
 }
 
-layer-rule {
-    match namespace="waybar"
-    match at-startup=true
-
-    // Properties that apply continuously.
-    // opacity 0.9
-    block-out-from "screencast"
-    // block-out-from "screen-capture"
-
-    shadow {
-        // on
-        off
-        softness 40
-        spread 5
-        offset x=0 y=5
-        draw-behind-window true
-        color "#00000064"
-        // inactive-color "#00000064"
-    }
-
-    geometry-corner-radius 12
-    place-within-backdrop true
-    // baba-is-float true
-}
 
 recent-windows {
     // off
@@ -531,17 +438,7 @@ recent-windows {
         max-scale 0.6
     }
 
-    binds {
-        Alt+Tab         { next-window; }
-        Alt+Shift+Tab   { previous-window; }
-        Alt+grave       { next-window     filter="app-id"; }
-        Alt+Shift+grave { previous-window filter="app-id"; }
 
-        Mod+Tab         { next-window; }
-        Mod+Shift+Tab   { previous-window; }
-        Mod+grave       { next-window     filter="app-id"; }
-        Mod+Shift+grave { previous-window filter="app-id"; }
-    }
 }
 
 
@@ -828,7 +725,7 @@ overview{
     zoom 0.5
     backdrop-color "#191232ff"
     workspace-shadow{
-        off
+        on
     }
 }
 
@@ -856,7 +753,7 @@ environment {
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     XDG_SESSION_TYPE "wayland"
     XDG_CURRENT_DESKTOP "niri"
-    WLR_RENDER_SCALING "1.5"
+    // WLR_RENDER_SCALING "1.5"             it will be overriden by output{}
     }
 
 
