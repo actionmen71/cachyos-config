@@ -27,6 +27,7 @@
     //modules left
     "modules-left": [
         "user",
+        "power-profiles-daemon",
         "custom/cpu",
         "memory",
         "disk",

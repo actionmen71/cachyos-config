@@ -302,6 +302,20 @@ text_transform='capitalize'>{status}</span>",
 	"unit": "GB",
 	"min-length": 7,
     "max-length": 7,
+},
+
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "min-length": 3,
+    "max-length": 3,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
 }
 
 }
