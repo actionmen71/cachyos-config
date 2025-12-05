@@ -1,11 +1,39 @@
-max-visible=10
-layer=top
-font=Sarasa UI SC 10
-background-color=#4c566add
-text-color=#d8dee9
-border-color=#434c5e
-border-radius=7
+# ~/.config/mako/config
+
+# Appearance
+font=JetBrainsMono Nerd Font 10
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+border-size=2
+border-radius=14
+padding=12
+margin=20
+layer=overlay
 max-icon-size=48
-default-timeout=10000
+width=350
+height=200
+output=*
+
+# Position
 anchor=top-right
-margin=0
+
+# Timing
+default-timeout=6000
+
+# Urgency levels
+[urgency=low]
+background-color=#181825
+border-color=#585b70
+text-color=#bac2de
+
+[urgency=normal]
+background-color=#1e1e2e
+border-color=#89b4fa
+text-color=#cdd6f4
+
+[urgency=critical]
+background-color=#f38ba8
+border-color=#f38ba8
+text-color=#1e1e2e
+default-timeout=0
